@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Disable Next's automatic optimized font loading which can cause
+  // `ERR_UNSUPPORTED_ESM_URL_SCHEME` on Windows for some setups.
+  optimizeFonts: false,
   images: {
     domains: ['axiom.trade'],
     formats: ['image/avif', 'image/webp'],
@@ -13,4 +16,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

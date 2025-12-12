@@ -10,13 +10,15 @@ import type { RootState } from '@/lib/redux/store';
 import { useFilters } from '@/hooks/use-filters';
 
 export default function HomePage() {
-  const isFiltersPanelOpen = useSelector((state: RootState) => state.ui.isFiltersPanelOpen);
+  const isFiltersPanelOpen = useSelector(
+    (state: RootState) => state.ui.isFiltersPanelOpen
+  );
   const { filters, updateCategory } = useFilters();
-  
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-6">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Filters Sidebar */}
@@ -25,12 +27,14 @@ export default function HomePage() {
               <FiltersPanel />
             </aside>
           )}
-          
+
           {/* Main Content */}
           <div className="flex-1 min-w-0">
-            <Tabs 
-              value={filters.category} 
-              onValueChange={(value) => updateCategory(value as typeof filters.category)}
+            <Tabs
+              value={filters.category}
+              onValueChange={(value) =>
+                updateCategory(value as typeof filters.category)
+              }
               className="w-full"
             >
               <TabsList className="w-full justify-start mb-4">
@@ -39,15 +43,28 @@ export default function HomePage() {
                 <TabsTrigger value="final">Final Stretch</TabsTrigger>
                 <TabsTrigger value="migrated">Migrated</TabsTrigger>
               </TabsList>
-              
-              <TabsContent value={filters.category} className="mt-0">
+
+              {/* FIX: Static TabsContent blocks — no hydration mismatch */}
+              <TabsContent value="all" className="mt-0">
+                <PulseTable />
+              </TabsContent>
+
+              <TabsContent value="new" className="mt-0">
+                <PulseTable />
+              </TabsContent>
+
+              <TabsContent value="final" className="mt-0">
+                <PulseTable />
+              </TabsContent>
+
+              <TabsContent value="migrated" className="mt-0">
                 <PulseTable />
               </TabsContent>
             </Tabs>
           </div>
         </div>
       </main>
-      
+
       <TokenDetailsModal />
     </div>
   );
