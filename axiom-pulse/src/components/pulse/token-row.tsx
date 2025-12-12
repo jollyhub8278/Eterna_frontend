@@ -3,7 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { TrendingUp, TrendingDown, Info } from 'lucide-react';
-import { selectToken, openTokenModal } from '@/lib/redux/slices/ui-slice';
+import { selectToken } from '@/lib/redux/slices/tokens-slice';
+import {  openTokenModal } from '@/lib/redux/slices/ui-slice';
 import { QuickBuyButton } from './quick-buy-button';
 import { PriceCell } from './price-cell';
 import { Badge } from '@/components/ui/badge';
