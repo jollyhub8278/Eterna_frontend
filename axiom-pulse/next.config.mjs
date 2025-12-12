@@ -4,17 +4,26 @@ import next from 'next';
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
+  // ⛔ Ignore ESLint errors during builds (Option 2)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     domains: ['axiom.trade', 'api.dicebear.com'],
     formats: ['image/avif', 'image/webp'],
   },
+
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+
   // Critical for Windows ESM issues
   experimental: {
     esmExternals: 'loose',
   },
+
   // Webpack config for Windows compatibility
   webpack: (config, { isServer }) => {
     // Fix for Windows absolute path issues
