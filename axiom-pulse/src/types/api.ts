@@ -1,3 +1,5 @@
+import type { Token } from './token';
+
 export interface ApiResponse<T> {
   data: T;
   success: boolean;
