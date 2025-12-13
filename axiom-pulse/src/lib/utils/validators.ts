@@ -1,3 +1,5 @@
+import type { FilterState } from '@/types/filter';
+
 export const isValidAddress = (address: string): boolean => {
   return /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address);
 };

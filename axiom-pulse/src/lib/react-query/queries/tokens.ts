@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import type { Token, ApiResponse, TokensResponse } from '@/types/token';
+import type { Token } from '@/types/token';
+import type { ApiResponse, TokensResponse } from '@/types/api';
 import type { FilterState } from '@/types/filter';
 import { QUERY_KEYS } from '@/lib/utils/constants';
 

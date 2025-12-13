@@ -13,7 +13,7 @@ export const useFilteredTokens = () => {
   const tokens = useMemo(() => {
     if (!data) return [];
     
-    let filtered = data.tokens;
+    let filtered: Token[] = data.tokens;
     
     // Apply search filter
     if (filters.search) {
