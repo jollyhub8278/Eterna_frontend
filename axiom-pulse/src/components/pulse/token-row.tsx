@@ -32,6 +32,7 @@ export const TokenRow: React.FC<TokenRowProps> = React.memo(({ token, index }) =
       const timeout = setTimeout(() => setPriceAnimation(null), 600);
       return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [token.price]);
   
   const handleShowDetails = () => {
