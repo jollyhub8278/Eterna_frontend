@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import type { Token, ApiResponse, TokensResponse } from '@/types/token';
+import type { Token } from '@/types/token';
+import type { ApiResponse, TokensResponse } from '@/types/api';
 
 // Mock data generator
 const generateMockToken = (id: number, category: Token['category']): Token => {
