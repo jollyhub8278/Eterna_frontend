@@ -13,7 +13,7 @@ export interface Token {
   transactions24h: number;
   buyCount: number;
   sellCount: number;
-  age: number; // in minutes
+  age: number; 
   top10HoldersPercent: number;
   devHoldingPercent: number;
   snipersPercent: number;
