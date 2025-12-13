@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import type { Token, ApiResponse } from '@/types/token';
+import type { Token } from '@/types/token';
+import type { ApiResponse } from '@/types/api';
 
 export async function GET(
   request: NextRequest,
